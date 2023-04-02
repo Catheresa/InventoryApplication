@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="modifyPartAnchorPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.ModifyPartController">
+    <children>
+          <RadioButton fx:id="modifyPartInHouse" layoutX="312.0" layoutY="39.0" mnemonicParsing="false" onAction="#onClickModifyPartInHouse" selected="true" text="In-House">
+        <toggleGroup>
+            <ToggleGroup fx:id="manufacturedSource" />
+        </toggleGroup></RadioButton>
+          <RadioButton fx:id="modifyPartOutsourced" layoutX="400.0" layoutY="39.0" mnemonicParsing="false" onAction="#onClickModifyPartOutsourced" text="Outsourced" toggleGroup="$manufacturedSource" />
+        <TextField fx:id="modifyPartTitle" editable="false" layoutX="36.0" layoutY="35.0" text="Modify Part">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </TextField>
+        <ButtonBar layoutX="382.0" layoutY="387.0" prefHeight="40.0" prefWidth="200.0">
+            <buttons>
+                <Button fx:id="modifyPartSave" mnemonicParsing="false" onAction="#onClickModifyPartSave" text="Save" />
+                <Button fx:id="modifyPartCancel" mnemonicParsing="false" onAction="#onClickModifyPartCancel" text="Cancel" />
+            </buttons>
+        </ButtonBar>
+        <HBox fx:id="IDPairModify" layoutX="36.0" layoutY="112.0" prefHeight="25.0" prefWidth="375.0" spacing="40.0">
+            <children>
+
+                <TextField fx:id="modifyPartID" editable="false" text="ID" />
+                <TextField fx:id="modifyPartIDAutoGen" disable="true" editable="false" promptText="Auto Gen-Disabled" />
+            </children>
+        </HBox>
+        <HBox fx:id="namePairModify" layoutX="35.0" layoutY="148.0" prefHeight="25.0" prefWidth="375.0" spacing="40.0">
+            <children>
+                <TextField fx:id="modifyPartName" editable="false" text="Name" />
+                <TextField fx:id="modifyPartNameInput" />
+            </children>
+        </HBox>
+        <HBox fx:id="invPairModify" layoutX="34.0" layoutY="188.0" prefHeight="25.0" prefWidth="375.0" spacing="40.0">
+            <children>
+                <TextField fx:id="modifyPartInv" editable="false" text="Inv" />
+                <TextField fx:id="modifyPartInvInput" />
+            </children>
+        </HBox>
+        <HBox fx:id="priceCostPairModify" layoutX="34.0" layoutY="226.0" prefHeight="25.0" prefWidth="375.0" spacing="40.0">
+            <children>
+                <TextField fx:id="modifyPartPriceCost" editable="false" prefWidth="149.0" text="Price/Cost" />
+                <TextField fx:id="modifyPartPriceCostInput" />
+            </children>
+        </HBox>
+        <HBox fx:id="maxPairModify" layoutX="34.0" layoutY="261.0" prefHeight="25.0" prefWidth="375.0" spacing="40.0">
+            <children>
+                <TextField fx:id="modifyPartMax" editable="false" prefHeight="25.0" prefWidth="149.0" text="Max" />
+                <TextField fx:id="modifyPartMaxInput" prefHeight="25.0" prefWidth="149.0" />
+            </children>
+        </HBox>
+        <HBox fx:id="inHouseOutsourcedPairModify" layoutX="34.0" layoutY="299.0" prefHeight="25.0" prefWidth="375.0" spacing="40.0">
+            <children>
+                <TextField fx:id="modifyPartSource" editable="false" text="Machine ID" />
+                <TextField fx:id="modifyPartSourceInput" />
+            </children>
+        </HBox>
+        <HBox fx:id="minPair" layoutX="406.0" layoutY="263.0" prefHeight="25.0" prefWidth="375.0" spacing="40.0">
+            <children>
+                <TextField fx:id="modifyPartMin" editable="false" prefHeight="25.0" prefWidth="149.0" text="Min" />
+                <TextField fx:id="modifyPartMinInput" prefHeight="25.0" prefWidth="149.0" />
+            </children>
+        </HBox>
+      <TextArea fx:id="modifyPartTextArea" layoutX="32.0" layoutY="343.0" prefHeight="202.0" prefWidth="363.0" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="addPartAnchorPane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.AddPartController">
+   <children>
+      <RadioButton fx:id="addPartInHouse" layoutX="312.0" layoutY="39.0" mnemonicParsing="false" onAction="#onClickPartInHouse" selected="true" text="In-House">
+         <toggleGroup>
+            <ToggleGroup fx:id="manufacturedSource" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="addPartOutsourced" layoutX="411.0" layoutY="39.0" mnemonicParsing="false" onAction="#onClickPartOutsourced" text="Outsourced" toggleGroup="$manufacturedSource" />
+      <TextField fx:id="addPartTitle" editable="false" layoutX="36.0" layoutY="35.0" text="Add Part">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <ButtonBar layoutX="382.0" layoutY="387.0" prefHeight="40.0" prefWidth="200.0">
+        <buttons>
+          <Button fx:id="addPartSave" mnemonicParsing="false" onAction="#onClickAddPartSave" text="Save" />
+            <Button fx:id="addPartCancel" mnemonicParsing="false" onAction="#onClickAddPartCancel" text="Cancel" />
+        </buttons>
+      </ButtonBar>
+      <HBox fx:id="IDPair" layoutX="36.0" layoutY="112.0" prefHeight="25.0" prefWidth="375.0" spacing="40.0">
+         <children>
+
+            <TextField fx:id="addPartID" editable="false" text="ID" />
+            <TextField fx:id="addPartIDAutoGen" disable="true" editable="false" promptText="Auto Gen-Disabled" />
+         </children>
+      </HBox>
+      <HBox fx:id="namePair" layoutX="35.0" layoutY="148.0" prefHeight="25.0" prefWidth="375.0" spacing="40.0">
+         <children>
+            <TextField fx:id="addPartName" editable="false" text="Name" />
+            <TextField fx:id="addPartNameInput" />
+         </children>
+      </HBox>
+      <HBox fx:id="invPair" layoutX="34.0" layoutY="188.0" prefHeight="25.0" prefWidth="375.0" spacing="40.0">
+         <children>
+            <TextField fx:id="addPartInv" editable="false" text="Inv" />
+            <TextField fx:id="addPartInvInput" />
+         </children>
+      </HBox>
+      <HBox fx:id="priceCostPair" layoutX="34.0" layoutY="226.0" prefHeight="25.0" prefWidth="375.0" spacing="40.0">
+         <children>
+            <TextField fx:id="addPartPriceCost" editable="false" prefWidth="149.0" text="Price/Cost" />
+            <TextField fx:id="addPartPriceCostInput" />
+         </children>
+      </HBox>
+      <HBox fx:id="maxPair" layoutX="34.0" layoutY="261.0" prefHeight="25.0" prefWidth="375.0" spacing="40.0">
+         <children>
+            <TextField fx:id="addPartMax" editable="false" prefHeight="25.0" prefWidth="149.0" text="Max" />
+            <TextField fx:id="addPartMaxInput" prefHeight="25.0" prefWidth="149.0" />
+         </children>
+      </HBox>
+      <HBox fx:id="inHouseOutsourcedPair" layoutX="34.0" layoutY="299.0" prefHeight="25.0" prefWidth="375.0" spacing="40.0">
+         <children>
+            <TextField fx:id="addPartSource" editable="false" text="Machine ID" />
+            <TextField fx:id="addPartSourceInput" />
+         </children>
+      </HBox>
+      <HBox fx:id="minPair" layoutX="406.0" layoutY="263.0" prefHeight="25.0" prefWidth="375.0" spacing="40.0">
+         <children>
+            <TextField fx:id="addPartMin" editable="false" prefHeight="25.0" prefWidth="149.0" text="Min" />
+            <TextField fx:id="addPartMinInput" prefHeight="25.0" prefWidth="149.0" />
+         </children>
+      </HBox>
+      <TextArea fx:id="addPartTextArea" blendMode="SRC_ATOP" layoutX="16.0" layoutY="346.0" prefHeight="178.0" prefWidth="375.0" />
+   </children>
+</AnchorPane>

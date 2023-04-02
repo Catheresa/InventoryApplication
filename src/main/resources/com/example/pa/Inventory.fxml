@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.InventoryController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="227.59998168945313" minHeight="54.799997711181646" prefHeight="71.99999084472657" />
+    <RowConstraints maxHeight="212.60000228881833" minHeight="0.0" prefHeight="55.20000152587892" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="432.4000366210937" minHeight="10.0" prefHeight="349.4000366210938" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="218.99993896484375" minHeight="10.0" prefHeight="64.99996337890627" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <StackPane prefHeight="98.0" prefWidth="603.0" GridPane.rowIndex="1">
+         <children>
+            <Label fx:id="parts" text="Parts" StackPane.alignment="BOTTOM_LEFT">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </StackPane.margin></Label>
+            <TextField fx:id="partSearch" alignment="CENTER_RIGHT" onAction="#onPartSearch" prefHeight="25.0" prefWidth="500.0" promptText="Search by Part ID or Name" StackPane.alignment="BOTTOM_RIGHT">
+               <StackPane.margin>
+                  <Insets bottom="10.0" left="120.0" right="10.0" top="10.0" />
+               </StackPane.margin></TextField>
+         </children>
+      </StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <Label fx:id="products" alignment="CENTER" text="Products" StackPane.alignment="BOTTOM_LEFT">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </StackPane.margin></Label>
+            <TextField fx:id="productSearch" alignment="CENTER_RIGHT" onAction="#onProductSearch" promptText="Search by Product ID or Name" StackPane.alignment="BOTTOM_RIGHT">
+               <StackPane.margin>
+                  <Insets bottom="10.0" left="120.0" right="10.0" top="10.0" />
+               </StackPane.margin></TextField>
+         </children>
+      </StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="2">
+         <children>
+            <TableView fx:id="partsTable" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="partIDCol" text="Part ID" />
+                <TableColumn fx:id="partNameCol" prefWidth="180.9999771118164" text="Part Name" />
+                  <TableColumn fx:id="partInventoryLevelCol" minWidth="0.0" prefWidth="122.4000244140625" text=" Inventory Level" />
+                  <TableColumn fx:id="partPriceCPUCol" prefWidth="215.99996948242188" text="Price/Cost per Unit" />
+              </columns>
+            </TableView>
+         </children>
+      </StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="3">
+         <children>
+            <ButtonBar prefHeight="40.0" prefWidth="368.0">
+               <buttons>
+                  <Button fx:id="partAdd" mnemonicParsing="false" onAction="#onClickPartAdd" text="Add" />
+                  <Button fx:id="partModify" mnemonicParsing="false" onAction="#onClickPartModify" text="Modify" />
+                  <Button fx:id="partDelete" mnemonicParsing="false" onAction="#onClickPartDelete" text="Delete" />
+                  <Button fx:id="exitScreen" mnemonicParsing="false" onAction="#onClickExitScreen" text="Exit Screen" />
+               </buttons>
+               <StackPane.margin>
+                  <Insets right="30.0" />
+               </StackPane.margin>
+            </ButtonBar>
+         </children></StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <TableView fx:id="productsTable" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="productIDCol" text="Product ID" />
+                <TableColumn fx:id="productNameCol" prefWidth="236.2000732421875" text="Product Name" />
+                  <TableColumn fx:id="productInventoryLevelCol" prefWidth="116.4000244140625" text="Inventory Level" />
+                  <TableColumn fx:id="productPriceCPUCol" prefWidth="166.0" text="Price/Cost per Unit" />
+              </columns>
+            </TableView>
+         </children>
+      </StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <children>
+            <ButtonBar prefHeight="40.0" prefWidth="200.0" StackPane.alignment="CENTER">
+              <buttons>
+                <Button fx:id="productAdd" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#onClickProductAdd" text="Add" />
+                  <Button fx:id="productModify" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#onClickProductModify" text="Modify" />
+                  <Button fx:id="productDelete" minHeight="25.0" minWidth="75.0" mnemonicParsing="false" onAction="#onClickProductDelete" text="Delete" />
+              </buttons>
+               <StackPane.margin>
+                  <Insets right="30.0" />
+               </StackPane.margin>
+            </ButtonBar>
+         </children>
+      </StackPane>
+      <TitledPane animated="false" text="Inventory Management System" textAlignment="CENTER">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
+         <font>
+            <Font name="SansSerif Bold Italic" size="14.0" />
+         </font>
+         <GridPane.margin>
+            <Insets top="15.0" />
+         </GridPane.margin>
+      </TitledPane>
+      <TextArea fx:id="textArea" blendMode="DARKEN" prefHeight="54.0" prefWidth="600.0" GridPane.columnIndex="1">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </TextArea>
+   </children>
+</GridPane>
